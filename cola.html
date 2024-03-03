@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Impact, sans-serif;
+            background-color: #ff00ff; /* Purple background */
+        }
+
+        header {
+            background: #00ffff; /* Cyan header */
+            color: #ff0000; /* Red text */
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+            border: 5px dashed #00ff00; /* Green dashed border */
+            border-radius: 20px;
+            box-shadow: 0 0 20px #ff00ff; /* Purple shadow */
+            transform: rotate(15deg); /* Rotate header */
+            animation: shake 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(15deg);
+            }
+            100% {
+                transform: rotate(20deg);
+            }
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 10px solid #ff0000; /* Red border */
+            border-radius: 50%;
+            background: linear-gradient(to right, #00ff00, #ffff00, #ff0000); /* Rainbow background */
+            animation: rotate 10s linear infinite;
+            box-shadow: 0 0 20px #ffff00; /* Yellow shadow */
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(180deg) saturate(200%); /* Adjust image colors */
+            transition: filter 0.5s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            filter: hue-rotate(360deg) saturate(400%); /* Adjust hover effect */
+        }
+
+        .portfolio-item::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            border-radius: 50%;
+            animation: move 3s ease-in-out infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Insane Portfolio</h1>
+    </header>
+    <main>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2ce02207-e6bd-4e3d-b5ba-a8baa23a3058/Default_a_portrait_of_a_uniformed_dictator_in_a_pilot_oxygen_m_0.jpg" alt="Portrait of a Uniformed Dictator">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/5b4f3e0f-cb7a-4150-aa5f-acbc48b31d07/Default_a_portrait_of_a_magenta_dictator_with_a_giant_zuccini_0.jpg" alt="Portrait of a Magenta Dictator with a Giant Zuccini">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/7d4257bc-d317-42ed-923d-ec7841832c8e/Default_a_portrait_of_a_dictator_with_a_giant_zuccini_sideways_0.jpg" alt="Portrait of a Dictator with a Giant Zuccini Sideways">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/4b1e558e-0d80-4219-96fe-716612361aae/Default_a_portrait_of_a_dictator_with_a_giant_zuccini_on_his_h_0.jpg" alt="Portrait of a Dictator with a Giant Zuccini on His Head">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/48cddfad-6f72-4167-a417-972f03b09192/Default_a_portrait_of_a_dictator_with_a_raccoon_on_his_head_ki_0.jpg" alt="Portrait of a Dictator with a Raccoon on His Head">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/f80839d1-3c49-459d-a954-1c6c00b11ca1/Default_a_portrait_of_a_dictator_with_a_giant_onion_on_his_hea_0.jpg" alt="Portrait of a Dictator with a Giant Onion on His Head">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/f5c32e37-86c6-4a87-9a4c-0d9f557af1a9/Default_a_portrait_of_a_dictator_with_a_giant_egplant_on_his_h_0.jpg" alt="Portrait of a Dictator with a Giant Eggplant on His Head">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/1a1f97c1-da9b-4895-8d44-de8cd690b355/Default_a_portrait_of_a_dictator_with_a_giant_udder_on_his_hea_0.jpg" alt="Portrait of a Dictator with a Giant Udder on His Head">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/47e1adb1-30b2-44ef-bf4a-c18263eb08ed/Default_a_portrait_of_a_dictator_in_a_pilot_oxygen_mask_and_in_0.jpg" alt="Portrait of a Dictator in a Pilot Oxygen Mask">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/ce090262-d362-4f67-8048-8323f6b612eb/Default_a_portrait_of_a_dictator_with_infalted_rubber_gloves_o_0.jpg" alt="Portrait of a Dictator with Inflated Rubber Gloves">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

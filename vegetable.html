@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Moving Elements</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        transform-origin: center center; /* Set the scaling origin */
+    }
+    .element {
+        position: absolute;
+    }
+    .vegetable {
+        position: absolute;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const veggies = ['🥦', '🥕', '🍆', '🍅', '🥒', '🌽', '🫑', '🥔', '🧅', '🧄'];
+        const images = [
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b7eb4099-8c6b-44f6-b954-4043c4d0360c/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg",
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/cd51d688-5664-4b7f-9678-68bf83d2bdba/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg",
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b9b1e3bd-58b6-4500-b32e-3574e3ebb1c8/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg",
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c5f8b509-5092-4202-81dd-a5863c94654d/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg",
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/92930739-0bf5-4928-a586-e5d7025fdd33/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg",
+            "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/23ca7269-3ec5-4d6b-86bb-3217b65c578a/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg"
+        ];
+
+        for (let i = 0; i < 100; i++) {
+            createVegetable(veggies[Math.floor(Math.random() * veggies.length)]);
+        }
+
+        for (let i = 0; i < images.length; i++) {
+            createImage(images[i]);
+        }
+
+        function createVegetable(emoji) {
+            const vegetable = document.createElement('div');
+            vegetable.classList.add('vegetable');
+            vegetable.textContent = emoji;
+            document.body.appendChild(vegetable);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            vegetable.style.left = `${x}px`;
+            vegetable.style.top = `${y}px`;
+        }
+
+        function createImage(src) {
+            const image = new Image();
+            image.classList.add('element');
+            image.src = src;
+            document.body.appendChild(image);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            const size = Math.random() * (150 - 50) + 50; // Random size between 50px and 150px
+            const speed = Math.random() * 0.1 + 0.05; // Random speed between 0.05 and 0.15
+
+            image.style.left = `${x}px`;
+            image.style.top = `${y}px`;
+            image.style.width = `${size}px`;
+
+            let mouseEnterListener = null;
+
+            image.addEventListener('mouseenter', function() {
+                document.body.style.transform = `scale(${window.innerHeight / size})`;
+                document.body.style.transformOrigin = `${x + size / 2}px ${y + size / 2}px`; // Set the scaling origin to the center of the image
+            });
+
+            image.addEventListener('mouseleave', function() {
+                document.body.style.transform = 'scale(1)';
+            });
+
+            document.addEventListener('mousemove', function(event) {
+                moveElement(image, event.clientX, event.clientY, speed);
+            });
+        }
+
+        function moveElement(element, mouseX, mouseY, speed) {
+            const dx = mouseX - element.offsetLeft - element.offsetWidth / 2;
+            const dy = mouseY - element.offsetTop - element.offsetHeight / 2;
+            const angle = Math.atan2(dy, dx);
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            const offsetX = Math.cos(angle) * distance * speed;
+            const offsetY = Math.sin(angle) * distance * speed;
+
+            element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
+    });
+</script>
+</body>
+</html>

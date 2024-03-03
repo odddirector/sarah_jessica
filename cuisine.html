@@ -1,0 +1,164 @@
+<!-- https://chat.openai.com/share/edce11f5-b501-4807-a08a-b215145bb21c -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixelina McQuirk - Web Design Portfolio</title>
+<style>
+  /* CSS begins here */
+  body {
+    background-color: #ffc0cb; /* Pink background because why not */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Because why stick to the norms */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Insane navigation bar */
+  nav {
+    background-color: #00ff00; /* Neon green navbar, who needs subtlety? */
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 24px;
+    transform: rotate(15deg); /* Let's tilt the menu items a bit */
+    transition: all 0.5s ease-in-out;
+  }
+  
+  nav ul li:hover {
+    transform: rotate(-15deg) scale(1.2); /* Spin and grow on hover because why not */
+    filter: hue-rotate(180deg); /* Invert colors for extra effect */
+  }
+  
+  /* Insane heading */
+  h1 {
+    color: #ff00ff; /* Magenta heading */
+    text-align: center;
+    margin-top: 100px;
+    font-size: 72px;
+    transform: skewY(-10deg); /* Skew heading for an edgy look */
+  }
+  
+  /* Insane sections */
+  section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  section h2 {
+    color: #0000ff; /* Blue section headings */
+    font-size: 48px;
+    text-transform: uppercase;
+    animation: pulse 1s infinite alternate; /* Pulse animation for section headings */
+  }
+  
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  /* Insane footer */
+  footer {
+    background-color: #ffff00; /* Yellow footer */
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  /* Let's go even crazier with the portfolio items */
+  .portfolio-item {
+    display: inline-block;
+    margin: 20px;
+    border: 5px solid #ff0000; /* Red border because why not */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .portfolio-item:hover {
+    transform: rotate(360deg); /* Spin portfolio items on hover */
+  }
+  
+  .portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%) blur(3px); /* Grayscale and blur the images */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .portfolio-item:hover img {
+    filter: none; /* Remove filter on hover for a surprise effect */
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <h1>Welcome to Pixelina McQuirk's Portfolio!</h1>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Pixelina McQuirk, your friendly neighborhood web designer with a twist!</p>
+    <p>I specialize in crafting visually stunning websites for organizations that sell restaurant leftovers to third-world countries. Because every byte counts, and so does every bite!</p>
+  </section>
+  
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <!-- Portfolio Items -->
+    <div class="portfolio-item">
+      <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b7eb4099-8c6b-44f6-b954-4043c4d0360c/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 1">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/cd51d688-5664-4b7f-9678-68bf83d2bdba/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 2">
+    </div>
+    <!-- Add more portfolio items as needed -->
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Want to collaborate on a mind-bending web project? Drop me a line!</p>
+    <p>Email: pixelina@example.com</p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Pixelina McQuirk - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

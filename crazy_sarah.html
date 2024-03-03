@@ -1,0 +1,279 @@
+<!-- 
+https://chat.openai.com/share/09867ac5-ab80-4edd-85e5-b59bf5844d98
+
+Modified by Philipp
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quirky Web Designer Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        .container * {
+            filter: blur(2px); /* addded by Philipp */
+        }
+        .container *:hover {
+            filter: blur(0); /* addded by Philipp */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ff00ff;
+            color: #ffff00;
+            overflow-x: hidden;
+            animation: rainbow-background 10s infinite linear;
+        }
+
+        @keyframes rainbow-background {
+            0% { background-color: #ff00ff; }
+            25% { background-color: #ff0000; }
+            50% { background-color: #ffff00; }
+            75% { background-color: #00ff00; }
+            100% { background-color: #0000ff; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            transform: rotate(3deg);
+            /* filter: blur(2px); */ /* removeddd by Philipp */
+            animation: shake-container 0.1s infinite alternate;
+        }
+
+        @keyframes shake-container {
+            0% { transform: rotate(3deg) translateX(0); }
+            100% { transform: rotate(3deg) translateX(5px); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4d4d;
+            margin-bottom: 30px;
+            font-size: 50px;
+            text-transform: uppercase;
+            animation: color-change 5s infinite linear;
+        }
+
+        @keyframes color-change {
+            0% { color: #ff4d4d; }
+            25% { color: #ff0000; }
+            50% { color: #ffff00; }
+            75% { color: #00ff00; }
+            100% { color: #0000ff; }
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: slide-menu 2s infinite alternate;
+        }
+
+        @keyframes slide-menu {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            transition: all 0.3s ease-in-out;
+            animation: rotate-links 1s infinite linear;
+        }
+
+        @keyframes rotate-links {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+
+        nav a:hover {
+            transform: rotate(20deg);
+            color: #ff4d4d;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 50px;
+            animation: scale-portfolio 3s infinite alternate;
+        }
+
+        @keyframes scale-portfolio {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .portfolio-item {
+            width: 300px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            animation: rotate-item 2s infinite alternate;
+        }
+
+        
+
+        @keyframes rotate-item {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(20deg); }
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            filter: grayscale(100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            filter: grayscale(0%);
+            transform: rotate(360deg);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 77, 77, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+        }
+
+        .overlay-content h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .overlay-content p {
+            color: #fff;
+        }
+
+        .portfolio-item:hover .container {
+            filter: none;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the World of Quirks - Portfolio of Quirky Web Designer</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+            <a href="#awards">Awards</a>
+        </nav>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm the weirdest web designer you'll ever meet. My mind works in mysterious ways, and I bring a touch of madness to everything I create.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 1">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 1</h3>
+                            <p>Description: This website represents the melancholic journey of Sad Sarah Jessi in the digital realm.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 2">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 2</h3>
+                            <p>Description: This website delves into the surreal dreamscape of Sad Sarah Jessi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 3">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 3</h3>
+                            <p>Description: This website captures the essence of Sad Sarah Jessi's enigmatic world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 4">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 4</h3>
+                            <p>Description: This website showcases the haunting beauty of Sad Sarah Jessi's inner thoughts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 5">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 5</h3>
+                            <p>Description: This website offers a glimpse into the surrealistic world of Sad Sarah Jessi's imagination.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 6">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 6</h3>
+                            <p>Description: This website reflects the whimsical nature of Sad Sarah Jessi's digital playground.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 7">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 7</h3>
+                            <p>Description: This website immerses visitors in the surrealistic narrative of Sad Sarah Jessi's digital odyssey.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 8">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Portfolio Item 8</h3>
+                            <p>Description: This website encapsulates the emotional journey of Sad Sarah Jessi's digital persona.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Want to collaborate on a project? Reach out to me through the telepathic channels of the universe.</p>
+        </section>
+        <section id="awards">
+            <h2>Awards</h2>
+            <p>I've won numerous awards in the parallel dimension of creativity, where imagination knows no bounds.</p>
+        </section>
+    </div>
+</body>
+</html>

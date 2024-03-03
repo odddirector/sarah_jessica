@@ -1,0 +1,113 @@
+<!-- 
+    https://chat.openai.com/share/f26c8fd2-fbf7-40dd-9c5b-ecec55d54081
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutabaga Radish - Web Design Portfolio</title>
+    <style>
+        /* Insane CSS Starts Here */
+
+        body {
+            background: linear-gradient(135deg, #ff00ff, #00ff00);
+            color: #ffffff;
+            font-family: 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            transform: rotate(-5deg);
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.5rem;
+            transform: skew(10deg);
+            margin: 20px 0;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            margin: 20px;
+            transform: rotate(10deg);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .portfolio-item img {
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            filter: grayscale(100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        /* Insane CSS Ends Here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Rutabaga Radish's Portfolio</h1>
+        <p>Your one-stop destination for avant-garde web design experiences!</p>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b7eb4099-8c6b-44f6-b954-4043c4d0360c/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 1">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/cd51d688-5664-4b7f-9678-68bf83d2bdba/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 2">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b9b1e3bd-58b6-4500-b32e-3574e3ebb1c8/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 3">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c5f8b509-5092-4202-81dd-a5863c94654d/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 4">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/92930739-0bf5-4928-a586-e5d7025fdd33/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 5">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="#">
+                    <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/23ca7269-3ec5-4d6b-86bb-3217b65c578a/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 6">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

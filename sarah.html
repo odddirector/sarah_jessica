@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 12px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu ul li a:hover {
+            background-color: #555;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    
+    <div class="portfolio">
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 1">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 2">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 3">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 4">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 5">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 6">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 7">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Portfolio Item 8">
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas dimensions
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Tree variables
+        const treeCount = 20;
+        const trees = [];
+
+        // Tree constructor
+        function Tree(x, y, height, speed) {
+            this.x = x;
+            this.y = y;
+            this.height = height;
+            this.speed = speed;
+
+            this.draw = function() {
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x + this.height / 4, this.y);
+                ctx.lineTo(this.x + this.height / 8, this.y - this.height);
+                ctx.lineTo(this.x - this.height / 8, this.y - this.height);
+                ctx.lineTo(this.x - this.height / 4, this.y);
+                ctx.closePath();
+                ctx.fillStyle = '#008000';
+                ctx.fill();
+            }
+
+            this.update = function() {
+                this.x += this.speed;
+
+                if (this.x > canvas.width + this.height / 4) {
+                    this.x = -this.height / 4;
+                }
+            }
+        }
+
+        // Initialize trees
+        for (let i = 0; i < treeCount; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * (canvas.height / 2) + canvas.height / 2;
+            const height = Math.random() * 100 + 50;
+            const speed = Math.random() * 2 + 1;
+            trees.push(new Tree(x, y, height, speed));
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            trees.forEach(tree => {
+                tree.draw();
+                tree.update();
+            });
+        }
+
+        animate();
+    </script>
+</body>
+</html>

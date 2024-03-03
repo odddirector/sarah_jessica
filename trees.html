@@ -1,0 +1,120 @@
+<!-- 
+    in a single html file, build me a personal portfolio website of a web designer (make up his name).
+Write css that uses transforms, transitions, gradients, filters and makes the site look like a forest with hundreds of tall trees that react to cursor movement. 
+Add a made-up interactive menu to the site, 
+Write everything in a single html file. 
+Use the following images as portfolio items, make each item expandable and viewable on click and so that when you click on it you can see a description as well:
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elijah Forest - Web Designer</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        background: #537a52;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .portfolio-item {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        background-size: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+        transform: scale(1.1);
+    }
+
+    .portfolio-item.expand {
+        width: 400px;
+        height: 400px;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+    }
+
+    .menu a {
+        display: block;
+        margin-bottom: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu a:hover {
+        text-decoration: underline;
+    }
+
+    /* Forest Effect */
+    .forest {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://cdn.pixabay.com/photo/2016/02/18/22/16/forest-1209816_960_720.jpg') center/cover no-repeat;
+        filter: grayscale(100%);
+        pointer-events: none;
+        transition: transform 0.5s ease;
+    }
+
+    /* Interactive Forest */
+    body:hover .forest {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+<div class="forest"></div>
+<div class="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+</div>
+<div class="container">
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+    <div class="portfolio-item" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg')"></div>
+</div>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    portfolioItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('expand');
+        });
+    });
+</script>
+</body>
+</html>
