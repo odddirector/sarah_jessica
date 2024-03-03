@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Interactive Moving Elements</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
     body {
         margin: 0;
@@ -24,6 +24,12 @@
     .word {
         position: absolute;
         font-size: 24px;
+    }
+    .bold-char {
+        font-weight: bold;
+    }
+    .colorful-char {
+        color: rgb(255, 0, 0); /* Default color, will be overwritten */
     }
 </style>
 </head>
@@ -98,7 +104,16 @@
         function createWord(text) {
             const word = document.createElement('div');
             word.classList.add('word');
-            word.textContent = text.split('').map(char => Math.random() < 0.2 ? char + ' ' : char).join('');
+            const colorfulCharIndex = Math.floor(Math.random() * text.length);
+            word.innerHTML = text.split('').map((char, index) => {
+                if (index === colorfulCharIndex) {
+                    return `<span class="colorful-char">${char}</span>`;
+                } else if (Math.random() < 0.2) {
+                    return `<span class="bold-char">${char}&nbsp;</span>`;
+                } else {
+                    return char + ' ';
+                }
+            }).join('');
             document.body.appendChild(word);
 
             const x = Math.random() * window.innerWidth;
