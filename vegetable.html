@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Interactive Moving Elements</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <style>
     body {
         margin: 0;
@@ -11,6 +12,7 @@
         cursor: pointer;
         transition: transform 0.3s ease;
         transform-origin: center center; /* Set the scaling origin */
+        font-family: 'Roboto', sans-serif;
     }
     .element {
         position: absolute;
@@ -18,6 +20,10 @@
     .vegetable {
         position: absolute;
         pointer-events: none;
+    }
+    .word {
+        position: absolute;
+        font-size: 24px;
     }
 </style>
 </head>
@@ -41,6 +47,10 @@
         for (let i = 0; i < images.length; i++) {
             createImage(images[i]);
         }
+
+        createWord("About me");
+        createWord("Contact");
+        createWord("Awards");
 
         function createVegetable(emoji) {
             const vegetable = document.createElement('div');
@@ -83,6 +93,18 @@
             document.addEventListener('mousemove', function(event) {
                 moveElement(image, event.clientX, event.clientY, speed);
             });
+        }
+
+        function createWord(text) {
+            const word = document.createElement('div');
+            word.classList.add('word');
+            word.textContent = text.split('').map(char => Math.random() < 0.2 ? char + ' ' : char).join('');
+            document.body.appendChild(word);
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            word.style.left = `${x}px`;
+            word.style.top = `${y}px`;
         }
 
         function moveElement(element, mouseX, mouseY, speed) {
