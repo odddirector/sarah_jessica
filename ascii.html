@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCII to Image</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .image-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="image-container">
+  <!-- Images will be inserted here -->
+</div>
+
+<script>
+  const images = [
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg",
+    "https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg"
+  ];
+
+  const container = document.querySelector('.image-container');
+
+  images.forEach(imageURL => {
+    const imgElement = document.createElement('img');
+    imgElement.setAttribute('src', imageURL);
+    imgElement.setAttribute('data-ascii', ''); // Store ASCII data here
+    container.appendChild(imgElement);
+
+    // Load ASCII on hover
+    imgElement.addEventListener('mouseover', async function() {
+      if (!this.getAttribute('data-ascii')) {
+        const ascii = await convertToASCII(this.src);
+        this.setAttribute('data-ascii', ascii);
+        this.src = 'data:image/jpeg;base64,' + ascii;
+      }
+    });
+
+    // Restore original image on mouseout
+    imgElement.addEventListener('mouseout', function() {
+      const ascii = this.getAttribute('data-ascii');
+      if (ascii) {
+        this.src = this.getAttribute('src');
+      }
+    });
+  });
+
+  async function convertToASCII(imageURL) {
+    const response = await fetch(imageURL);
+    const blob = await response.blob();
+    const ascii = await blobToASCII(blob);
+    return ascii;
+  }
+
+  function blobToASCII(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const img = document.createElement('img');
+        img.src = this.result;
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const aspectRatio = this.width / this.height;
+          const width = 100; // Width of ASCII representation
+          const height = Math.floor(width / aspectRatio);
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(this, 0, 0, width, height);
+          const imageData = ctx.getImageData(0, 0, width, height);
+          const ascii = pixelsToASCII(imageData.data, width);
+          resolve(ascii);
+        }
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  function pixelsToASCII(pixels, width) {
+    const ASCII_CHARS = ['@', '#', 'S', '%', '?', '*', '+', ';', ':', ',', '.'];
+    let ascii = '';
+
+    for (let i = 0; i < pixels.length; i += 4) {
+      const brightness = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
+      const index = Math.floor(brightness / 255 * ASCII_CHARS.length);
+      ascii += ASCII_CHARS[index];
+      if ((i / 4 + 1) % width === 0) {
+        ascii += '\n';
+      }
+    }
+
+    return ascii;
+  }
+</script>
+
+</body>
+</html>

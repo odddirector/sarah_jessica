@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insane Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #200d0d 0%, #090202 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+
+  .container {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100vh 100vw;
+    border-color: transparent transparent rgba(255, 0, 0, 0.5) transparent;
+    transform-origin: bottom;
+    animation: burn 5s infinite alternate;
+  }
+
+  @keyframes burn {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      filter: brightness(1) contrast(1) saturate(1);
+    }
+    100% {
+      transform: translateY(-50vh) rotate(180deg);
+      filter: brightness(2) contrast(2) saturate(2) blur(2px);
+    }
+  }
+
+  .triangle:nth-child(1) { top: -50vh; left: -50vw; }
+  .triangle:nth-child(2) { top: -50vh; left: 0; }
+  .triangle:nth-child(3) { top: -50vh; right: -50vw; }
+  .triangle:nth-child(4) { top: 0; left: -50vw; }
+  .triangle:nth-child(5) { top: 0; right: -50vw; }
+  .triangle:nth-child(6) { bottom: -50vh; left: -50vw; }
+  .triangle:nth-child(7) { bottom: -50vh; right: 0; }
+  .triangle:nth-child(8) { bottom: -50vh; right: -50vw; }
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+</div>
+<h1>Welcome to My Insane Portfolio</h1>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!-- https://chat.openai.com/share/ca493f0e-7248-4012-9383-c82c6c172e7a -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insane Portfolio</title>
+<style>
+  /* Absolutely insane CSS4 goes here! */
+  body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    perspective: 1000px; /* For 3D transforms */
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .image-container {
+    position: relative;
+    width: 300px; /* Adjust as per your requirement */
+    height: 300px; /* Adjust as per your requirement */
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 50px red; /* Insane shadow effect */
+    animation: pulse 2s infinite alternate; /* Insane animation */
+    transform-style: preserve-3d; /* For 3D transformations */
+  }
+
+  .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8), transparent); /* Red coal effect */
+    mix-blend-mode: screen; /* Insane blending mode */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle clip-path */
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(150%) brightness(50%) blur(3px); /* Crazy image filters */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle clip-path */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<h1>Insane Portfolio</h1>
+
+<div class="container">
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b7eb4099-8c6b-44f6-b954-4043c4d0360c/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 1">
+  </div>
+
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/cd51d688-5664-4b7f-9678-68bf83d2bdba/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 2">
+  </div>
+
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/b9b1e3bd-58b6-4500-b32e-3574e3ebb1c8/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 3">
+  </div>
+
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c5f8b509-5092-4202-81dd-a5863c94654d/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 4">
+  </div>
+
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/92930739-0bf5-4928-a586-e5d7025fdd33/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 5">
+  </div>
+
+  <div class="image-container">
+    <img class="image" src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/23ca7269-3ec5-4d6b-86bb-3217b65c578a/Default_screenshots_of_a_website_that_features_a_fat_businessm_0.jpg" alt="Portfolio Item 6">
+  </div>
+</div>
+
+<p>Welcome to my absolutely crazy portfolio website! Here you'll find the most mind-blowing projects and creations!</p>
+
+</body>
+</html>

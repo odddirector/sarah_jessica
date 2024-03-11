@@ -1,0 +1,115 @@
+<!-- https://chat.openai.com/share/c8f20bae-cfb9-4579-b23b-e66ca8bd17e3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Impact, sans-serif;
+            overflow-x: hidden;
+            background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,91,0,1) 33%, rgba(255,255,0,1) 66%, rgba(255,255,255,1) 100%);
+            animation: fireBackground 5s infinite alternate;
+        }
+
+        @keyframes fireBackground {
+            0% {background-position: 0% 0%;}
+            100% {background-position: 100% 100%;}
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .item {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+            animation: pulse 2s infinite alternate;
+            border: 10px solid transparent;
+            background: linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,255,0,1) 100%);
+            animation: colorShift 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            100% {transform: scale(1.1);}
+        }
+
+        @keyframes colorShift {
+            0% {border-color: rgba(255,0,0,0.5);}
+            25% {border-color: rgba(255,255,0,0.5);}
+            50% {border-color: rgba(255,0,0,0.5);}
+            75% {border-color: rgba(255,255,0,0.5);}
+            100% {border-color: rgba(255,0,0,0.5);}
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(200%) contrast(150%);
+            transition: transform 0.5s ease;
+        }
+
+        .item:hover img {
+            transform: rotate(180deg) scale(1.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        p {
+            text-align: center;
+            color: #fff;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 1">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 2">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 3">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 4">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 5">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 6">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 7">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="Image 8">
+        </div>
+    </div>
+    <h1>Welcome to My Insane Portfolio!</h1>
+    <p>Hover over the images for more insanity!</p>
+</body>
+</html>

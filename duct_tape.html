@@ -1,0 +1,152 @@
+<!-- https://chat.openai.com/share/90d7413a-7317-4077-aeab-2c3b313e4286 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff00ff, #00ffff, #ff00ff);
+            background-size: 600% 600%;
+            animation: gradientAnimation 20s ease infinite;
+            color: #ff00ff;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .item {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+            transform: rotate(45deg) scale(0.5);
+            transition: transform 0.5s ease;
+        }
+
+        .item:hover {
+            transform: rotate(720deg) scale(2);
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 6em;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            animation: shake 0.5s ease infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        p {
+            text-align: center;
+            font-size: 2em;
+            line-height: 1.5em;
+            max-width: 800px;
+            margin: 20px auto;
+            animation: glitch 1s linear infinite alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        @font-face {
+            font-family: 'Glitch';
+            src: url('https://fonts.gstatic.com/s/8-bit-madness/v8/MWFX1sUfTTQ4ITAhAQQ8d5tGYW-mlks.ttf');
+        }
+
+        .glitch-text {
+            font-family: 'Glitch', monospace;
+        }
+
+        .rainbow-text {
+            animation: rainbow 5s infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="rainbow-text">Insane Portfolio</h1>
+    <p class="glitch-text">Welcome to the madness!</p>
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/85616ca3-e214-474b-921a-d54b56aefe2a/Default_screenshots_of_a_website_that_features_product_photos_0.jpg" alt="Image 1">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/1c5bf8d3-2372-4c74-a00f-1cd882c67c45/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 2">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/5d7088e5-e07d-4785-8086-fd9a6301c525/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 3">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/4f8b1da4-ce62-4eb7-a59b-6b16620e6632/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 4">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/7e11feb3-b30a-4d27-8701-9c354abb7d2a/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 5">
+        </div>
+        <div class="item">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/ff58dbf8-0577-48e6-9b96-40823b728116/Default_screenshot_of_a_website_that_features_portraits_of_hap_0.jpg" alt="Image 6">
+        </div>
+    </div>
+</body>
+
+</html>

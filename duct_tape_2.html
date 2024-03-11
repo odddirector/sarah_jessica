@@ -1,0 +1,102 @@
+<!-- https://chat.openai.com/share/bc798506-de95-4f4a-b255-4feb0f6f2b21 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Personal Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #ff0080, #ff8c00, #ffec00); /* Gradient background */
+            color: #00ff00; /* Neon green text */
+            animation: neonText 1.5s infinite alternate; /* Neon text animation */
+        }
+
+        @keyframes neonText {
+            from {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 55px #00ff00, 0 0 75px #00ff00, 0 0 100px #00ff00, 0 0 150px #00ff00;
+            }
+            to {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff, 0 0 75px #ff00ff, 0 0 100px #ff00ff, 0 0 150px #ff00ff;
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #ff00ff; /* Neon purple text */
+            text-transform: uppercase;
+            animation: neonGlow 2s infinite alternate; /* Neon glow animation */
+        }
+
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff, 0 0 100px #00ffff, 0 0 150px #00ffff;
+            }
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image {
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5), 0 0 100px rgba(255, 255, 255, 0.5), 0 0 150px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .image:hover {
+            transform: rotate(360deg) scale(1.2);
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.9), 0 0 150px rgba(255, 255, 255, 0.9), 0 0 200px rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Welcome to My Insane Portfolio!</h1>
+            <h2>Passionate about making websites for companies that make differently-flavoured duct tape for children</h2>
+            <div class="image-container">
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/85616ca3-e214-474b-921a-d54b56aefe2a/Default_screenshots_of_a_website_that_features_product_photos_0.jpg');"></div>
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/1c5bf8d3-2372-4c74-a00f-1cd882c67c45/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg');"></div>
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/5d7088e5-e07d-4785-8086-fd9a6301c525/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg');"></div>
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/4f8b1da4-ce62-4eb7-a59b-6b16620e6632/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg');"></div>
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/7e11feb3-b30a-4d27-8701-9c354abb7d2a/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg');"></div>
+                <div class="image" style="background-image: url('https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/ff58dbf8-0577-48e6-9b96-40823b728116/Default_screenshot_of_a_website_that_features_portraits_of_hap_0.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

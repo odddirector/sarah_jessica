@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Folding Origami</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .paper {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    position: relative;
+    transition: all 3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    transition: all 3s ease;
+    transform-style: preserve-3d;
+  }
+
+  .paper.folded {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+  }
+
+  .paper.folded::before {
+    transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-180deg);
+  }
+
+  @keyframes shape1 {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    50% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+  }
+
+  @keyframes shape2 {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    50% {
+      transform: rotateX(180deg) rotateY(0) rotateZ(180deg);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+  }
+
+  @keyframes shape3 {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    50% {
+      transform: rotateX(0) rotateY(180deg) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+  }
+
+  @keyframes shape4 {
+    0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    50% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(0) rotateY(180deg) rotateZ(180deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="paper"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const paper = document.querySelector('.paper');
+      const shapes = ['shape1', 'shape2', 'shape3', 'shape4'];
+
+      setInterval(() => {
+        const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+        paper.style.animationName = randomShape;
+        paper.classList.toggle('folded');
+      }, 6000); // Change folding interval as needed
+    });
+  </script>
+</body>
+</html>

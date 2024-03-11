@@ -1,0 +1,142 @@
+<!-- https://chat.openai.com/share/a2c63b97-a87f-451c-b177-72c6f1f320be -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-page styles */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #02aab0, #00cdac);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        /* Waterfall effect container */
+        .waterfall-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            perspective: 2000px;
+        }
+
+        /* Image container */
+        .image-container {
+            position: relative;
+            width: calc(50% - 20px);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        /* Image hover effect */
+        .image-container:hover {
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+
+        /* Image styles */
+        .image-container img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%) brightness(70%) contrast(150%);
+            transition: filter 0.5s;
+        }
+
+        /* Image hover effect */
+        .image-container:hover img {
+            filter: none;
+        }
+
+        /* Text overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* Text overlay hover effect */
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Text styles */
+        .overlay h2 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .overlay p {
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="waterfall-container">
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/85616ca3-e214-474b-921a-d54b56aefe2a/Default_screenshots_of_a_website_that_features_product_photos_0.jpg" alt="Image 1">
+            <div class="overlay">
+                <h2>Amazing Products</h2>
+                <p>Check out my awesome product photos!</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/1c5bf8d3-2372-4c74-a00f-1cd882c67c45/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 2">
+            <div class="overlay">
+                <h2>Unique Images</h2>
+                <p>Explore a collection of unconventional images!</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/5d7088e5-e07d-4785-8086-fd9a6301c525/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 3">
+            <div class="overlay">
+                <h2>Different Perspectives</h2>
+                <p>See the world through a unique lens!</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/4f8b1da4-ce62-4eb7-a59b-6b16620e6632/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 4">
+            <div class="overlay">
+                <h2>Artistic Visions</h2>
+                <p>Experience the artistry in every detail!</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/7e11feb3-b30a-4d27-8701-9c354abb7d2a/Default_screenshot_of_a_website_that_features_images_of_differ_0.jpg" alt="Image 5">
+            <div class="overlay">
+                <h2>Creative Design</h2>
+                <p>Discover the beauty of unconventional design!</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/ff58dbf8-0577-48e6-9b96-40823b728116/Default_screenshot_of_a_website_that_features_portraits_of_hap_0.jpg" alt="Image 6">
+            <div class="overlay">
+                <h2>Happiness Captured</h2>
+                <p>Experience the joy and happiness in every portrait!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

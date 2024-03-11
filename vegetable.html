@@ -1,3 +1,4 @@
+<!-- https://chat.openai.com/share/1d3254a7-70b0-4162-a78b-c51427c88421 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,9 +32,22 @@
     .colorful-char {
         color: rgb(255, 0, 0); /* Default color, will be overwritten */
     }
+    .about-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+    }
 </style>
 </head>
 <body>
+<div class="about-section" id="about-section">
+    <p>The designer's name is Radish Carrot. Radish is passionate about the cause of selling restaurant leftovers to children in third world countries.</p>
+</div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const veggies = ['🥦', '🥕', '🍆', '🍅', '🥒', '🌽', '🫑', '🥔', '🧅', '🧄'];
@@ -133,6 +147,17 @@
 
             element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
         }
+
+        function createAboutSection() {
+            const aboutSection = document.getElementById('about-section');
+            aboutSection.style.display = 'block';
+        }
+
+        document.querySelector('.word:nth-child(1)').addEventListener('click', function() {
+            createAboutSection();
+            document.body.style.transform = `scale(${window.innerHeight / (window.innerHeight * 0.9)})`;
+            document.body.style.transformOrigin = 'center center';
+        });
     });
 </script>
 </body>

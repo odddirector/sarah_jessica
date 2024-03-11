@@ -1,0 +1,160 @@
+<!-- https://chat.openai.com/share/8b5224e3-2f2a-4a5f-8bc0-711401b26e86 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: inherit;
+            transform-style: preserve-3d;
+            animation: rotate 60s infinite linear;
+        }
+
+        .item {
+            margin: 20px;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transform-style: preserve-3d;
+            transition: transform 0.5s, box-shadow 0.5s;
+            cursor: pointer;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .item:hover {
+            transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 1);
+        }
+
+        .item:nth-child(1) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/c1ce3aeb-bcd7-4782-aa3c-a2249e99da32/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: shake 3s infinite alternate;
+        }
+
+        .item:nth-child(2) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/eff65e44-15c8-4a4c-8a67-f08344112e35/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: rotate 2s infinite alternate;
+        }
+
+        .item:nth-child(3) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/dd17abb2-d706-4655-8a2c-f99724677569/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: shake 4s infinite alternate;
+        }
+
+        .item:nth-child(4) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/8900d334-26fc-4f1f-b0ce-951038bb29da/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: rotate 5s infinite alternate;
+        }
+
+        .item:nth-child(5) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/72580584-968f-470e-83ef-29d0a61700a5/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: shake 6s infinite alternate;
+        }
+
+        .item:nth-child(6) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/02463290-34ad-401c-afa0-d008d9044505/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: rotate 7s infinite alternate;
+        }
+
+        .item:nth-child(7) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/2a1f2ed9-9ffb-47cd-bd89-49791d79dd6a/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: shake 8s infinite alternate;
+        }
+
+        .item:nth-child(8) {
+            background-image: url("https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg");
+            animation: rotate 9s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0) rotateX(0) rotateZ(0);
+            }
+            to {
+                transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+            }
+        }
+
+        /* Add more insane animations and transitions if needed */
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            animation: spin 10s infinite linear;
+        }
+
+        h1 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://cdn.leonardo.ai/users/5c502b5e-238d-4324-b737-7d27c6fe2068/generations/a7e7d136-72e7-4bfc-95fc-1c9566fe94dd/Default_screenshots_of_a_website_that_features_sad_Sarah_Jessi_0.jpg" alt="logo" width="100">
+    </div>
+    <h1>Welcome to my Insane Portfolio</h1>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
